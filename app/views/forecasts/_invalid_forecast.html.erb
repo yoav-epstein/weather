@@ -1,0 +1,7 @@
+<h3>
+  Zip Code: <%= forecast.zip_code %>
+  <% if forecaster.cached? %>
+    (cached)
+  <% end %>
+</h3>
+<h3>Error: <%= forecast.error_message %></h3>

@@ -1,0 +1,8 @@
+<h1>Yoav's Weather Forecaster</h1>
+<%= form_with url: "/forecasts" do |form| %>
+  <%= form.label :zip_code, "Zip Code:" %>
+  <%= form.text_field :zip_code %>
+  <%= form.submit "Forecast" %>
+<% end %>
+<br>
+<div id="forecast"></div>

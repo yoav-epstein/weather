@@ -1,0 +1,11 @@
+<h3>
+  Zip Code: <%= forecast.zip_code %>
+  <% if forecaster.cached? %>
+    (cached)
+  <% end %>
+</h3>
+<h3>City: <%= forecast.city %></h3>
+<h3>Temperature: <%= forecast.temp %></h3>
+<h3>Low: <%= forecast.temp_min %></h3>
+<h3>High: <%= forecast.temp_max %></h3>
+<h3>Conditions: <%= forecast.description %></h3>

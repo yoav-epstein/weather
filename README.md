@@ -1,24 +1,22 @@
-# README
+# WEATHER FORECASTER
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Running the application
 
-Things you may want to cover:
+In a terminal, enter the command: `bin/rails server`
 
-* Ruby version
+In a browser, navigate to: `http://localhost:3000`, enter the zip code and click the `Forecast` button
 
-* System dependencies
+## Design Decisions
+the `Forecast` model is API agnostic and it is the responsibility of the weather api code to create and fill an
+instance of the model. this allows the weather API to be replaced without changing the application.
 
-* Configuration
+the `Forecaster` model is responsible for using the weather api to return a `Forecast`. It is also responsible
+for caching the forecasts.
 
-* Database creation
+## API credentials
+OpenWeatherMap is used as the service to get the weather forecast. The api credentials are stored in the file
+`config/credentials.yml.enc`, use `bin/rails credentials:edit` to edit it.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Caching
+The Rails memory cache is used by the application. The cache defaults for `development`, and `test` were changed
+to keep things simple.
